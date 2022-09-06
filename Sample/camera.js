@@ -9,7 +9,7 @@ var options = {
     quality: 90,
     delay: 0,
     saveShots: true,
-    output: "image.jpg",
+    output: "jpeg",
     device: false,
     callbackReturn: "location"
 };
@@ -31,7 +31,7 @@ module.exports =  async function (name) {
 	
 
 	return new Promise((resolve, reject) => {
-		webcam.capture(`./images/${name}/${options.output}`, (err, data) => {
+		webcam.capture(`./images/${name}/image.jpg`, (err, data) => {
 			if(!err){
 				resolve(data);				
 			}else{
