@@ -1,4 +1,4 @@
-const settings = require('../settings.json'); 
+const settings = require('./simulator-settings.json'); 
 
 module.exports = async function () {
   try {

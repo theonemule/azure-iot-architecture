@@ -1,0 +1,32 @@
+{
+"memTotal" : 32000000,
+"memFreeUpper" : 0.9,	
+"memFreeLower" : 0.6,	
+"cpuLoadUpper" : 0.9,	
+"cpuLoadLower" : 0.3,
+"cpuTempUpper" : 90,	
+"cpuTempLower" : 25,
+"fs" : [
+    {
+        "name": "d1",
+        "size": 32000000,
+        "freeUpper": 0.7,
+        "freeLower": 0.5
+    },
+    {
+        "name": "d2",
+        "size": 64000000,
+        "freeUpper": 0.6,
+        "freeLower": 0.55
+    }
+],
+"network": [
+    {
+        "name": "net1",
+        "rate": 10000
+    }
+],
+"batteryExists" : true,
+"batteryUpper" : 0.9,
+"batteryLower" : 0.1
+}
