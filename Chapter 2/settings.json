@@ -3,9 +3,9 @@
 	"telemetry":"simulator",
 	"camera":"simulator",
 	"pollFreq": 5000,
-	"connString": "HostName=blaizeiot.azure-devices.net;DeviceId=device1;SharedAccessKey=YBuu4/GqWLL6Fvmh1jbwk+5lZxZtnQxcp8miBVVZaf8=",
-	"provisioningHost":"blaizeiotdps.azure-devices-provisioning.net",
-	"idScope":"0ne00748C20",
-	"symmetricKey":"TRgfCkmUpRkqYRlWODjSRrSd7m1g+N/hk9eSzn9mBXcgVgSIoQtDV+/Q2EN1tGcKYduKaUHMtFrtF3y3G7lgtw==",
-	"registrationId":"blaize1"
+	"connString": "",
+	"provisioningHost":"",
+	"idScope":"",
+	"symmetricKey":"",
+	"registrationId":"device1"
 }
