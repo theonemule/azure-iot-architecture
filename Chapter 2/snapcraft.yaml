@@ -1,5 +1,5 @@
 name: iot-arch-demo
-version: git
+version: 1.0.0
 summary: Command line weather tool.
 description: |
   Device Simulator
@@ -8,7 +8,7 @@ confinement: strict
 base: core20
 
 apps:
-  iot-arch-device:
+  device:
     command: bin/device
     plugs:
       - camera
