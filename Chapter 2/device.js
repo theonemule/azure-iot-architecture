@@ -151,7 +151,9 @@ function connectHandler () {
 			twin.on('properties.desired', function(delta) {
 				console.log('new desired properties received:');
 				console.log(JSON.stringify(delta));
-				setPoll(delta.pollFreq);
+				if(delta.pollFreq){
+					setPoll(delta.pollFreq);
+				}
 			});
 
 			var freq = 0;
