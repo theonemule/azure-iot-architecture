@@ -1,6 +1,6 @@
 {
 	"start":"offline",
-	"telemetry":"simulator",
+	"telemetry":"device",
 	"camera":"simulator",
 	"pollFreq": 5000,
 	"connString": "",
