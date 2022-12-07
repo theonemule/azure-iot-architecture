@@ -1,11 +1,11 @@
 {
-	"start":"offline",
+	"start":"dps",
 	"telemetry":"simulator",
 	"camera":"simulator",
 	"pollFreq": 5000,
 	"connString": "",
-	"provisioningHost":"",
-	"idScope":"",
-	"symmetricKey":"",
-	"registrationId":"device1"
+	"provisioningHost":"blaizedps1.azure-devices-provisioning.net",
+	"idScope":"0ne007C4D38",
+	"symmetricKey":"rREfrgOcrb7Bm4dar9gwPnVEqIXom3hr8mS8/ulzhkr2Qgmp3lMVt4rBWuzAdMPg45V/gPgN/6WvRs2HzwLPcg==",
+	"registrationId":"device2"
 }

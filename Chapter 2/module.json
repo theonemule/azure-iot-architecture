@@ -1,0 +1,15 @@
+{
+    "$schema-version": "0.0.1",
+    "description": "Device Sample and Simulator",
+    "image": {
+        "repository": "localhost:5000/edgedevice",
+        "tag": {
+            "version": "0.0.1",
+            "platforms": {
+                "amd64": "./dockerfile"
+            }
+        },
+        "buildOptions": []
+    },
+    "language": "javascript"
+}

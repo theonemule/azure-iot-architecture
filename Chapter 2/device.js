@@ -89,6 +89,8 @@ async function takePicture(request, response) {
 	var imagePath = await camera(imageName);
 	var fileStream = fs.createReadStream(imagePath);
 	fs.stat(imagePath, function (err, fileStats) {
+		console.log(fileStats);
+
 		client.uploadToBlob(`${imageName}.jpg` , fileStream, fileStats.size, function (err) {
 			if (err) {
 				response.send(500, err, function(err) {
@@ -151,7 +153,9 @@ function connectHandler () {
 			twin.on('properties.desired', function(delta) {
 				console.log('new desired properties received:');
 				console.log(JSON.stringify(delta));
-				setPoll(delta.pollFreq);
+				if(delta.pollFreq){
+					setPoll(delta.pollFreq);
+				}
 			});
 
 			var freq = 0;

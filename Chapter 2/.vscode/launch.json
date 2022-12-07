@@ -6,7 +6,7 @@
     "configurations": [
         {
             "name": "Launch Program",
-            "program": "${workspaceFolder}/index.js",
+            "program": "${workspaceFolder}/device.js",
             "request": "launch",
             "console":"externalTerminal",
             "skipFiles": [

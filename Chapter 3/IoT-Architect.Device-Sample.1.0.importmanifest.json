@@ -1,0 +1,47 @@
+﻿{
+    "updateId":  {
+                     "provider":  "IoT-Architect",
+                     "name":  "Device-Sample",
+                     "version":  "1.0"
+                 },
+    "isDeployable":  true,
+    "compatibility":  [
+                          {
+                              "deviceModel":  "Device-Sample",
+                              "deviceManufacturer":  "IoT-Architect"
+                          }
+                      ],
+    "instructions":  {
+                         "steps":  [
+                                       {
+                                           "type":  "inline",
+                                           "handler":  "microsoft/script:1",
+                                           "files":  [
+                                                         "simulator-settings.json",
+                                                         "update.sh"
+                                                     ],
+                                           "handlerProperties":  {
+                                                                     "installedCriteria":  "1.0"
+                                                                 }
+                                       }
+                                   ]
+                     },
+    "files":  [
+                  {
+                      "filename":  "simulator-settings.json",
+                      "sizeInBytes":  450,
+                      "hashes":  {
+                                     "sha256":  "heUljq/OTFONVEX6yf2YV8Wk//YsD1W+FDKRWCctvm8="
+                                 }
+                  },
+                  {
+                      "filename":  "update.sh",
+                      "sizeInBytes":  133,
+                      "hashes":  {
+                                     "sha256":  "pKuTYEUJGR+YtS0tqp2k9F9+FVfPGQgDdpTpbM9D9Ok="
+                                 }
+                  }
+              ],
+    "createdDateTime":  "2022-10-11T01:19:48.5786912Z",
+    "manifestVersion":  "4.0"
+}
