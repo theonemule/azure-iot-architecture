@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
 	"start":"dps",
 	"telemetry":"simulator",
+=======
+	"start":"offline",
+	"telemetry":"device",
+>>>>>>> ca9a227c7e046addf328e67d4981152d86207ce9
 	"camera":"simulator",
 	"pollFreq": 5000,
 	"connString": "",
