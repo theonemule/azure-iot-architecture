@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: device-simulator
+spec:
+  containers:
+    - name: device-simulator
+      image: arcdemoblaize.azurecr.io/device:latest
+      imagePullPolicy: IfNotPresent
+	  env:
+      - name: START
+        value: "offline"
+      - name: TELEMETRY
+        value: "simulator"
+      - name: CAMERA
+        value: "simulator"
+      - name: POLLFREQ
+        value: 5000
+  imagePullSecrets:
+    - name: acrcreds	
