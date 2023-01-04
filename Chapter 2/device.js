@@ -80,7 +80,9 @@ if (settings.start == "dps"){
 }
 
 
-var client;
+var iotEdgeLib = require('azure-iot-device').ModuleClient;
+
+var edgeClient;
 
 var intervalId;
 
@@ -183,10 +185,14 @@ async function data() {
 	
 	var systemData = await getData();	
 	systemData.messageType = "telemetry";
-	var message = new Message(JSON.stringify(systemData));
+	var message = new Message(JSON.stringify(systemData))
+	message.contentEncoding = "utf-8"; 
+    message.contentType = "application/json"; 
 	
 	if(settings.start == "dps" || settings.start == "connection_string"){
-      client.sendEvent(message, printResultFor('send'));	
+		client.sendEvent(message, printResultFor('send'));	
+	}else if(settings.start == "iotedge" ){
+		edgeClient.sendOutputEvent('telemetry', message, printResultFor('send'));
 	}
 }
 
@@ -230,6 +236,34 @@ async function main(){
 		}
 	}else if(settings.start == "connection_string") {
 		setClient(settings.connString);
+	}else if(settings.start == "iotedge") {
+
+		iotEdgeLib.fromEnvironment(Protocol, function (err, client) {
+			edgeClient = client;
+			
+			if (err) {
+				throw err;
+			} else {
+				client.on('error', function (err) {
+					throw err;
+				});
+
+				edgeClient.open(function (err) {
+					if (err) {
+						throw err;
+					} else {
+						console.log('IoT Hub module client initialized');
+
+						edgeClient.on('inputMessage', function (inputName, msg) {
+							client.complete(msg, printResultFor('Receiving message'));							
+						});
+
+						setPoll(settings.pollFreq);	
+					}
+				});
+			}
+		});
+	
 	}else{
 		setPoll(settings.pollFreq);				
 	}	

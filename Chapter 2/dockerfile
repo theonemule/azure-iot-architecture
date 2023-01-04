@@ -1,6 +1,12 @@
 FROM node:alpine
 COPY . /app
 WORKDIR ./app
+<<<<<<< HEAD
+RUN npm install 
+ENTRYPOINT ["/bin/sh"]
+CMD ["entrypoint.sh"]
+=======
 COPY entrypoint.sh /usr/local/bin/
 RUN npm install && chmod +x /usr/local/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
+>>>>>>> 35c836d56f56c864bf2e82b5a4a0d5add8708f93
