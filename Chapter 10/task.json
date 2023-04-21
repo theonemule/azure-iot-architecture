@@ -4,7 +4,8 @@
   "commandLine": "bash start.sh",
   "resourceFiles": [
 	{
-		"httpUrl": "https://raw.githubusercontent.com/theonemule/azure-iot-architecture/main/Chapter%2010/package.json": "package.json"
+		"httpUrl": "https://raw.githubusercontent.com/theonemule/azure-iot-architecture/main/Chapter%2010/package.json", 
+		"filePath": "package.json"
 	},
     {
 		"httpUrl": "https://raw.githubusercontent.com/theonemule/azure-iot-architecture/main/Chapter%2010/index.js",
@@ -15,7 +16,32 @@
 		"filePath": "start.sh"
     }
   ],
-  "environmentSettings": [],
+  "environmentSettings": [
+	{
+		"name":"STORAGE_CONNSTR",
+		"value":""
+	},
+	{
+		"name":"COSMOSDB_ENDPOINT",
+		"value":""
+	},
+	{
+		"name":"COSMOSDB_KEY",
+		"value":""
+	},
+	{
+		"name":"COSMOSDB_DATABASE",
+		"value":""
+	},
+	{
+		"name":"COSMOSDB_CONTAINER",
+		"value":""
+	},
+	{
+		"name":"IOTHUB_NAME",
+		"value":""
+	}
+  ],
   "userIdentity": {
     "autoUser": {
       "scope": "pool",
