@@ -1,0 +1,51 @@
+{
+  "properties": {
+	"vmSize": "standard_dc1s_v2",
+	"displayName": "iotpool",
+    "scaleSettings": {
+      "fixedScale": {
+        "targetDedicatedNodes": 0,
+        "targetLowPriorityNodes": 3,
+        "resizeTimeout": "PT8M",
+        "nodeDeallocationOption": "TaskCompletion"
+      }
+    },
+	"taskSlotsPerNode": 2,
+    "taskSchedulingPolicy": {
+      "nodeFillType": "spread"
+    },
+    "deploymentConfiguration": {
+		"virtualMachineConfiguration": {
+			"imageReference": {
+				"publisher": "canonical",
+				"offer": "0001-com-ubuntu-server-jammy",
+				"sku": "22_04-lts",
+				"version": "latest"
+			},
+			"nodeAgentSKUId": "batch.node.ubuntu 22.04",
+			"nodePlacementConfiguration": {
+				"policy": "regional"
+			}
+		}
+      },
+	  "startTask": {
+			"commandLine": "bash installnode.sh",
+			"resourceFiles": [
+				{
+					"httpUrl": "https://blaizeiotdata.blob.core.windows.net/telemetry/installnode.sh?sp=r&st=2023-04-21T14:02:25Z&se=2025-04-21T22:02:25Z&spr=https&sv=2021-12-02&sr=b&sig=dN6yMORwKWuabt2PaXi2fAgLuM1cx8A56Q9BHrIqiec%3D",
+					"filePath": "installnode.sh",
+					"fileMode": "777"
+				}
+			],
+			"userIdentity": {
+				"autoUser": {
+					"scope": "pool",
+					"elevationLevel": "admin"
+				}
+			},
+			"maxTaskRetryCount": 0,
+			"waitForSuccess": true
+		}	  
+    }
+}
+

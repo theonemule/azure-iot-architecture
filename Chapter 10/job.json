@@ -1,0 +1,15 @@
+{
+  "id": "iotdata",
+  "displayName": "iotdata",
+  "priority": 0,
+  "usesTaskDependencies": false,
+  "constraints": {
+    "maxWallClockTime": "P10675199DT2H48M5.4775807S",
+    "maxTaskRetryCount": 0
+  },
+  "poolInfo": {
+    "poolId": "iotprocessor"
+  },
+  "onAllTasksComplete": "noaction",
+  "onTaskFailure": "noaction"
+}
