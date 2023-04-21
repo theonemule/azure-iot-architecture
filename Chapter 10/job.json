@@ -1,6 +1,6 @@
 {
-  "id": "iotdata",
-  "displayName": "iotdata",
+  "id": "iotjob",
+  "displayName": "iotjob",
   "priority": 0,
   "usesTaskDependencies": false,
   "constraints": {
@@ -8,7 +8,7 @@
     "maxTaskRetryCount": 0
   },
   "poolInfo": {
-    "poolId": "iotprocessor"
+    "poolId": "iotpool"
   },
   "onAllTasksComplete": "noaction",
   "onTaskFailure": "noaction"

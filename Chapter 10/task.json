@@ -1,19 +1,17 @@
 {
   "id": "task1",
   "jobId": "task1",
-  "odata.metadata": "https://blaizeiotbatch.eastus.batch.azure.com/$metadata#tasks/@Element",
   "commandLine": "bash start.sh",
   "resourceFiles": [
 	{
-		"httpUrl": "https://blaizeiotdata.blob.core.windows.net/telemetry/package.json?sv=2021-10-04&st=2023-04-20T18%3A54%3A56Z&se=2025-04-21T18%3A54%3A00Z&sr=b&sp=r&sig=G94uoZO2rna%2BQdNcmtlMJ%2FPI8p%2F4hRi%2BgcJ7RHKaK78%3D",
-		"filePath": "package.json"
+		"httpUrl": "https://raw.githubusercontent.com/theonemule/azure-iot-architecture/main/Chapter%2010/package.json": "package.json"
 	},
     {
-		"httpUrl": "https://blaizeiotdata.blob.core.windows.net/telemetry/index.js?sv=2021-10-04&st=2023-04-20T19%3A01%3A33Z&se=2023-04-21T19%3A01%3A33Z&sr=b&sp=r&sig=XT0XBs3EZEPsFIOuiaOTmi3JlAmLLq83mcnW2PzEGmM%3D",
+		"httpUrl": "https://raw.githubusercontent.com/theonemule/azure-iot-architecture/main/Chapter%2010/index.js",
 		"filePath": "index.js"
     },
     {
-		"httpUrl": "https://blaizeiotdata.blob.core.windows.net/telemetry/start.sh?sp=r&st=2023-04-21T13:11:17Z&se=2025-04-21T21:11:17Z&spr=https&sv=2021-12-02&sr=b&sig=AhFwWvFWPsk7pTxKGlUt%2B%2BTZOrBKsPAHBHuzkrqvrSI%3D",
+		"httpUrl": "https://raw.githubusercontent.com/theonemule/azure-iot-architecture/main/Chapter%2010/start.sh",
 		"filePath": "start.sh"
     }
   ],

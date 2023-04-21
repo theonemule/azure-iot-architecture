@@ -32,7 +32,7 @@
 			"commandLine": "bash installnode.sh",
 			"resourceFiles": [
 				{
-					"httpUrl": "https://blaizeiotdata.blob.core.windows.net/telemetry/installnode.sh?sp=r&st=2023-04-21T14:02:25Z&se=2025-04-21T22:02:25Z&spr=https&sv=2021-12-02&sr=b&sig=dN6yMORwKWuabt2PaXi2fAgLuM1cx8A56Q9BHrIqiec%3D",
+					"httpUrl": "https://raw.githubusercontent.com/theonemule/azure-iot-architecture/main/Chapter%2010/installnode.sh",
 					"filePath": "installnode.sh",
 					"fileMode": "777"
 				}
