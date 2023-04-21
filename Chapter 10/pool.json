@@ -1,6 +1,6 @@
 {
   "properties": {
-	"vmSize": "standard_dc1s_v2",
+	"vmSize": "STANDARD_DS1_V2",
 	"displayName": "iotpool",
     "scaleSettings": {
       "fixedScale": {
