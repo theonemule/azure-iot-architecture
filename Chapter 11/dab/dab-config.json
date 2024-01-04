@@ -1,0 +1,41 @@
+{
+  "$schema": "https://github.com/Azure/data-api-builder/releases/download/v0.7.5/dab.draft.schema.json",
+  "data-source": {
+    "database-type": "cosmosdb_nosql",
+    "options": {
+      "database": "iotdata",
+      "schema": "schema.gql"
+    },
+    "connection-string": "AccountEndpoint=https://blaizecosmosdb.documents.azure.com:443/;AccountKey=ggBPnpdX9VuOe53UgPfvjjTzWC9cbwP6yqFmGqY476tVDAUziBiQE5aUhJRDC5jxuYMuRowHf8ExACDb1ucsjw==;"
+  },
+  "runtime": {
+    "graphql": {
+      "allow-introspection": true,
+      "enabled": true,
+      "path": "/graphql"
+    },
+    "host": {
+      "mode": "development",
+      "cors": {
+        "origins": [],
+        "allow-credentials": false
+      },
+      "authentication": {
+        "provider": "StaticWebApps"
+      }
+    }
+  },
+ "entities": {
+    "Telemetry": {
+      "source": "telemetry",
+      "rest": false,
+      "graphql": true,
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [ "*" ]
+        }
+      ]
+    }
+  }
+}

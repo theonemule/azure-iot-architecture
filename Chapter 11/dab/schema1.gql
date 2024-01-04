@@ -1,0 +1,47 @@
+type Telemtry @model {
+  id: ID
+  systemProperties: SystemProperties
+  iothubName: String
+  body: Body
+  _rid: String
+  _self: String
+  _etag: String
+  _attachments: String
+  _ts: Int
+}
+
+type SystemProperties {
+  messageId: String
+  iothubConnectionDeviceId: String
+  iothubConnectionAuthMethod: String
+  iothubConnectionAuthGenerationId: String
+  iothubContentType: String
+  iothubContentEncoding: String
+  iothubEnqueuedTime: String
+  iothubMessageSource: String
+}
+
+type Body {
+  timestamp: Float
+  memTotal: Int
+  memUsed: Int
+  cpuLoad: Int
+  cpuTemp: Int
+  fs: [FileSystem]
+  network: [Network]
+  batteryPercent: Int
+  batteryCharging: Boolean
+  messageType: String
+}
+
+type FileSystem {
+  name: String
+  size: Int
+  used: Float
+}
+
+type Network {
+  name: String
+  sent: Int
+  received: Int
+}

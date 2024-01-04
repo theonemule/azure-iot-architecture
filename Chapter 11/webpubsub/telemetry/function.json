@@ -1,0 +1,20 @@
+{
+  "bindings": [
+    {
+      "type": "eventHubTrigger",
+      "name": "IoTHubMessages",
+      "direction": "in",
+      "eventHubName": "samples-workitems",
+      "connection": "IoTHubConnectionString",
+      "cardinality": "many",
+      "consumerGroup": "$Default",
+      "dataType": "string"
+    },
+    {
+      "type": "webPubSub",
+      "name": "actions",
+      "hub": "telemetryhub",
+      "direction": "out"
+    }	
+  ]
+}

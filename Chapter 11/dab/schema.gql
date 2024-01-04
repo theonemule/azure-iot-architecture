@@ -1,0 +1,43 @@
+type Network {
+  name: String
+  sent: Int
+  recieved: Int
+}
+
+type Fs {
+  name: String
+  size: Int
+  used: Float
+}
+
+type Body {
+  timestamp: Int
+  memTotal: Int
+  memUsed: Int
+  cpuLoad: Int
+  cpuTemp: Int
+  batteryPercent: Int
+  batteryCharging: Boolean
+  messageType: String
+  network: [Network]
+  fs: [Fs]
+}
+
+type SystemProperties {
+  messageid: String
+  iothubconnectiondeviceid: String
+  iothubconnectionauthmethod: String
+  iothubconnectionauthgenerationid: String
+  iothubcontenttype: String
+  iothubcontentencoding: String
+  iothubenqueuedtime: String
+  iothubmessagesource: String
+}
+
+type Telemetry @model{
+  id: String
+  iothubname: String
+  _ts: Int
+  Body: Body
+  SystemProperties: SystemProperties
+}

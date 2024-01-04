@@ -1,0 +1,22 @@
+{
+  "bindings": [
+    {
+      "type": "cosmosDBTrigger",
+      "name": "documents",
+      "direction": "in",
+      "leaseCollectionName": "leases",
+      "connectionStringSetting": "DocumentStorageConnection",
+      "databaseName": "iotdata",
+      "collectionName": "telemetry",
+      "createLeaseCollectionIfNotExists": true,
+	  "startFromBeginning": "true"
+    },
+    {
+      "tableName": "telemetry",
+      "connection": "TableStorageConnection",
+      "name": "tableBinding",
+      "type": "table",
+      "direction": "out"
+    }		
+  ]
+}
