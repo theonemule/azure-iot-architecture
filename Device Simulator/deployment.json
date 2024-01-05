@@ -1,0 +1,76 @@
+{
+  "modulesContent": {
+      "$edgeAgent": {
+          "properties.desired": {
+              "schemaVersion": "1.1",
+              "runtime": {
+                  "type": "docker",
+                  "settings": {
+                      "registryCredentials": {
+                          "arcdemoblaize": {
+                              "address": "arcdemoblaize.azurecr.io",
+                              "password": "",
+                              "username": "arcdemoblaize"
+                          }
+                      }
+                  }
+              },
+              "systemModules": {
+                  "edgeAgent": {
+                      "settings": {
+                          "image": "mcr.microsoft.com/azureiotedge-agent:1.4"
+                      },
+                      "type": "docker"
+                  },
+                  "edgeHub": {
+                      "imagePullPolicy": "on-create",
+                      "restartPolicy": "always",
+                      "settings": {
+                          "image": "mcr.microsoft.com/azureiotedge-hub:1.4",
+                          "createOptions": "{\"HostConfig\":{\"PortBindings\":{\"443/tcp\":[{\"HostPort\":\"444\"}],\"5671/tcp\":[{\"HostPort\":\"5671\"}],\"8883/tcp\":[{\"HostPort\":\"8883\"}]}}}"
+                      },
+                      "status": "running",
+                      "type": "docker"
+                  }
+              },
+              "modules": {
+                  "device": {
+                      "env": {
+                          "START": {
+                              "value": "offline"
+                          },
+                          "TELEMETRY": {
+                              "value": "simulator"
+                          },
+                          "CAMERA": {
+                              "value": "simulator"
+                          },
+                          "POLLFREQ": {
+                              "value": "5000"
+                          }
+                      },
+                      "restartPolicy": "always",
+                      "settings": {
+                          "image": "arcdemoblaize.azurecr.io/device"
+                      },
+                      "status": "running",
+                      "type": "docker"
+                  }
+              }
+          }
+      },
+      "$edgeHub": {
+          "properties.desired": {
+              "schemaVersion": "1.1",
+              "storeAndForwardConfiguration": {
+                  "timeToLiveSecs": 7200
+              },
+              "routes": {
+                  "device2iothub": {
+                      "route": "FROM /messages/modules/device/outputs/telemetry INTO $upstream"
+                  }
+              }
+          }
+      }
+  }
+}
