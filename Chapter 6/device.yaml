@@ -6,7 +6,7 @@ spec:
   containers:
   - name: device-simulator
     image: <YOURACR>.azurecr.io/device:latest
-    imagePullPolicy: IfNotPresent
+    imagePullPolicy: IfNotPresent    
     env:
     - name: START
       value: "offline"
@@ -17,4 +17,4 @@ spec:
     - name: POLLFREQ
       value: "5000"
   imagePullSecrets:
-  - name: acrcred
+  - name: acrcreds
